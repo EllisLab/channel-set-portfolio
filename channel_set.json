@@ -2,6 +2,7 @@
     "channels": [
         {
             "channel_title": "Portfolio",
+            "title_field_label": "Project",
             "status_group": "Default",
             "field_group": "portfolio",
             "cat_groups": [
