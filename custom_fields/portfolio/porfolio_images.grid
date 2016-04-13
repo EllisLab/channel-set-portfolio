@@ -1,0 +1,40 @@
+{
+    "label": "Images",
+    "instructions": "",
+    "order": 2,
+    "columns": [
+        {
+            "type": "file",
+            "label": "Image",
+            "name": "image",
+            "instructions": "",
+            "required": "n",
+            "search": "n",
+            "width": "50",
+            "settings": {
+                "field_content_type": "image",
+                "allowed_directories": "all",
+                "show_existing": "y",
+                "num_existing": "50",
+                "field_fmt": "none",
+                "field_required": "n"
+            }
+        },
+        {
+            "type": "text",
+            "label": "Caption",
+            "name": "caption",
+            "instructions": "",
+            "required": "n",
+            "search": "n",
+            "width": "50",
+            "settings": {
+                "field_maxl": "256",
+                "field_fmt": "none",
+                "field_text_direction": "ltr",
+                "field_content_type": "all",
+                "field_required": "n"
+            }
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "channels": [
+        {
+            "channel_title": "Portfolio",
+            "status_group": "Default",
+            "field_group": "portfolio",
+            "cat_groups": [
+                "Portfolio"
+            ]
+        }
+    ],
+    "status_groups": [
+        {
+            "name": "Default",
+            "statuses": [
+                {
+                    "name": "Featured",
+                    "highlight": "66ccff"
+                }
+            ]
+        }
+    ],
+    "category_groups": [
+        {
+            "name": "Portfolio",
+            "sort_order": "a",
+            "categories": [
+                "Design",
+                "Development",
+                "Branding",
+                "Print"
+            ]
+        }
+    ],
+    "upload_destinations": []
+}

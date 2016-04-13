@@ -1,0 +1,38 @@
+{
+    "label": "Files",
+    "instructions": "",
+    "order": 3,
+    "columns": [
+        {
+            "type": "file",
+            "label": "File",
+            "name": "file",
+            "instructions": "",
+            "required": "n",
+            "search": "n",
+            "settings": {
+                "field_content_type": "all",
+                "allowed_directories": "all",
+                "show_existing": "y",
+                "num_existing": "50",
+                "field_fmt": "none",
+                "field_required": "n"
+            }
+        },
+        {
+            "type": "text",
+            "label": "Description",
+            "name": "description",
+            "instructions": "",
+            "required": "n",
+            "search": "n",
+            "settings": {
+                "field_maxl": "256",
+                "field_fmt": "none",
+                "field_text_direction": "ltr",
+                "field_content_type": "all",
+                "field_required": "n"
+            }
+        }
+    ]
+}
