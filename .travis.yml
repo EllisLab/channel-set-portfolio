@@ -18,16 +18,16 @@ before_deploy:
   - rm -rf ./.*
   - rm -rf composer.*
   - rm -rf README.md
-  - zip -r 'blog' .
+  - zip -r 'portfolio' .
 
 deploy:
   provider: releases
   api_key:
     secure: mksWi0izhEWhU3ANoUxPQ0joBy4yCwiu7Y17HjvxxVYDuVXM/73ie1zQ34AFCtts4FxNmwrT1tAxVksDa41k1a6x3paxfcT6PySletw4RB3T3OmxNO4HYsvmtSL4DVWw7ru5btlFTVMB+cClqAP3u+T+14QPOrYfYJWqz5ckf+w=
-  file: blog.zip
+  file: portfolio.zip
   skip_cleanup: true
   on:
-    repo: EllisLab/channel-set-blog
+    repo: EllisLab/channel-set-portfolio
     php: 7.0
     tags: true
     condition: $TRAVIS_PULL_REQUEST = false
