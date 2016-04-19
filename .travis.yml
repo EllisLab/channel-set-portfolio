@@ -15,19 +15,20 @@ script:
   - vendor/bin/jsonlint custom_fields/**/*
 
 before_deploy:
-  - rm -rf ./.*
-  - rm -rf composer.*
-  - rm -rf README.md
+  - rm -rf ./.editorconfig
+  - rm -rf ./.gitignore
+  - rm -rf ./.travis.yml
+  - rm -rf ./vendor/
+  - rm -rf ./composer.*
+  - rm -rf ./README.md
   - zip -r 'portfolio' .
 
 deploy:
   provider: releases
   api_key:
-    secure: mksWi0izhEWhU3ANoUxPQ0joBy4yCwiu7Y17HjvxxVYDuVXM/73ie1zQ34AFCtts4FxNmwrT1tAxVksDa41k1a6x3paxfcT6PySletw4RB3T3OmxNO4HYsvmtSL4DVWw7ru5btlFTVMB+cClqAP3u+T+14QPOrYfYJWqz5ckf+w=
+    secure: jcYYFfUPRKWEsb8bd9hZZN85rINkUF6Ehn4I6WOFzwosxdQ8kuW8CNdBhltkk1W8ML6g4nnEcmU3BwyylSrX8Mmgkt0Qmh0WMFrffGAWVbl2PCFCOnRDnQbljX8FZ+VWMKxt12q7EHhw7U3iBqIlmEehxuVCdTUAN8tzK2oZ+oE/+B0L0YzX2efCJGCmdHdQwjQSZKa5JPWa4B/h6a+4sutz1fKu+XbdAV9RaQnTMMvdGbeWG9ecC+SA74gJnX6mKIYJ/wfInPCcc+lft9R2c8+O9G1+1ktG4HH8u7Ykv5NFNKLYIU0xKcJgOs6HHFJfnsKZKn6b8Q1FFeMH3v5hWEYIzepxNOnfPlLC106B0gjhDk2SUVPTdJv8zWXMXfELtDBWjg5hgqUwN2b/u/hNf21nAkXACSlFHj4hFlYlPIWISN3yQkjGWVP5tNI8o5ySQ5L2mJKXNxSPSMb5LfD1HSce5ZEP+LXjKafvXTlYEb0SwhQFT17q2fEVRhe9x33N7LPaT+ahc2S1Pc+Sjci83+z+D80Z7F7nnBd9iTFT2gdPBuMusSn9956kpTThPbPO0crXTUO95mhlOfq5/FhxvOphIdXhoPTQA8Le7lDgl9QrRQH4kxHrLrJ1SAXnq4P7nnL6xG/2g6WQB35aRsAuUoO2efm8uVf1oG4jwQqK8Dg=
   file: portfolio.zip
-  skip_cleanup: true
   on:
-    repo: EllisLab/channel-set-portfolio
     php: 7.0
     tags: true
-    condition: $TRAVIS_PULL_REQUEST = false
+    repo: EllisLab/channel-set-portfolio
