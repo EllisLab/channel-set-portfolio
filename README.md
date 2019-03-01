@@ -2,6 +2,72 @@
 
 Quickly create a Portfolio Channel in your ExpressionEngine install with this Channel Set.
 
+The Media Portfolio Channel Set comes with custom fields, statuses, and categories to get you up and running fast. Here’s what’s inside:
+
+### Custom Fields
+
+* `{portfolio_images}`: a Grid field for images of your work
+  * `:image` - a File field to hold the image
+  * `:captio` - an optional Textarea to provide a caption to the image
+* `{portfolio_description}`: a Textarea to describe your work
+* `{portfolio_files}`: a Grid field for downloadable non-image files of your work (PDFs, zip files, etc.)
+  * `:file` - a File field to hold the file
+  * `:description` - an optional Textarea description for the file
+
+### Statuses
+
+* Open: published
+* Closed: not published
+* Featured: to call special attention to the entry
+
+### Categories
+
+* Branding
+* Design
+* Development
+* Print
+
+### Sample Tags
+
+```
+{exp:channel:entries channel='portfolio' limit='1' require_entry='yes'}
+	{if no_results}
+		{redirect='404'}
+	{/if}
+
+	<h1>{title}</h1>
+
+	{if has_categories}
+		<div>Categories:
+			<ul>
+				{categories}
+					<li><a href="{path='portfolio/index'}">{category_name}</a></li>
+				{/categories}
+			</ul>
+		</div>
+	{/if}
+
+	{portfolio_description}
+
+	{if portfolio_images:total_rows > 0}
+		{portfolio_images}
+			<figure>
+				<img src="{portfolio_images:image}" alt="{portfolio_images:caption}">
+				<figcaption>{blog_image:caption}</figcaption>
+			</figure>
+		{/portfolio_images}
+	{/if}
+
+	{if portfolio_files:total_rows > 0}
+		<ul>
+			{portfolio_files}
+				<li>{portfolio_files:file wrap='link'}</li>
+			{/portfolio_files}
+		</ul>
+	{/if}
+{/exp:channel:entries}
+```
+
 ## License
 
 Copyright (C) 2004 - 2016 EllisLab, Inc.
